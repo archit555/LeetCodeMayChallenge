@@ -13,7 +13,7 @@ Note: You may assume the string contain only lowercase letters.
 
 """
 
-Solution:
+Solution 1:
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         cr = Counter(s)
@@ -26,3 +26,21 @@ class Solution:
             return a
         else:
             return -1
+
+Solution 2:
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        dc = Counter(s)
+        for i in s:
+            if dc.get(i) == 1:
+                return s.index(i)
+        return -1
+        
+Solution 3:
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        cr = Counter(s)
+        for i in s:
+            if cr[i] == 1:
+                return s.index(i)
+        return -1
